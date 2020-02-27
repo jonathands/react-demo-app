@@ -9,25 +9,45 @@ class ClientList extends Component {
     super(props);
     this.state = { 
                     clients : [
-                      { name: 'Jonathan', id: parseInt(Math.random() * 100), status: true },
-                      { name: 'Maria', id: parseInt(Math.random() * 100), status: true },
-                      { name: 'Pedro', id: parseInt(Math.random() * 100), status: true }
+                      { name: 'Jonathan', id: parseInt(Math.random(3) * 100) , status: true },
+                      { name: 'Maria'   , id: parseInt(Math.random(1) * 100) , status: true },
+                      { name: 'Pedro'   , id: parseInt(Math.random(2) * 100) , status: true }
                    ]
     }
+    
     this.remove = this.remove.bind(this);
   }
   
-  dupe() {
-    
+  add(client) {
+    try {
+      let clientes = this.state.clients;
+
+      clientes.push(client);
+
+      this.setState({ clients : clientes });
+      this.renderRows();
+    } catch (e) {
+      console.log(e);
+    }
   }
 
-  remove() {
-    this.setState({ status: false });
+  remove(id) {
+    console.log(id);
+    let clientes = this.state.clients;
+
+    clientes.forEach(function (c) {
+      if (c.id === id) {
+        c.status = false;
+      }
+    });
+
+    this.setState({ clients: clientes });
+    this.renderRows();
   }
 
-  getStatusText()
+  getStatusText(status)
   {
-    return this.state.status ? "Ativo" : "inativo";
+    return status ? "Ativo" : "Inativo";
   }
 
   renderRows()
@@ -38,7 +58,7 @@ class ClientList extends Component {
         <Table.Col>{client.name}</Table.Col>
         <Table.Col>{this.getStatusText(client.status)}</Table.Col>
         <Table.Col>
-          <Button color="danger" onClick={this.remove}>&times;</Button>
+          <Button color="danger" onClick={(e) => this.remove(client.id,e)}>&times;</Button>
         </Table.Col>
       </Table.Row> ) 
     );
@@ -62,7 +82,7 @@ class ClientList extends Component {
             </Table>
           </Grid.Col>
           <Grid.Col width={2}>  
-            <Button color="success" onClick={this.dupe}>Duplicar &oplus;</Button>
+            <Button color="success" onClick={(e) => this.add({id : 1, name : 'Joao', status : true}, e)}>Adicionar &oplus;</Button>
           </Grid.Col>
         </Grid.Row>
       </Container>
