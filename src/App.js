@@ -1,13 +1,19 @@
 import React from 'react';
-import ClientList from './ClientList';
-import DefaultNav from './DefaultNav';
+import HeaderUi from './components/HeaderUi';
+import FooterUi from './components/FooterUi';
+import LinkBuilder from './components/LinkBuilder';
+import './App.css';
 
-
-const App = () => {
-  return (<div className="App">
-    <DefaultNav></DefaultNav>
-    <ClientList></ClientList>
-  </div>);
+function App() {
+  return (
+    <div className="App">
+      <HeaderUi />
+      <div>
+        <LinkBuilder/>
+      </div>
+      <FooterUi />
+    </div>
+  );
 }
 
 export default App;
