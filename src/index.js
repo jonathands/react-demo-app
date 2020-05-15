@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
+import { library } from '@fortawesome/fontawesome-svg-core'; 
+import { faCode, faPhone , faLink } from '@fortawesome/free-solid-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons';
+library.add(fab, faCode, faLink, faPhone);
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
