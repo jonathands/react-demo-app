@@ -1,6 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../assets/styles/navbar.scss';
-import logo from '../assets/media.loop.logo.svg';
 
 class MenuUi extends React.Component {
     render() {
@@ -9,7 +9,7 @@ class MenuUi extends React.Component {
                 <div className="navbar-item has-dropdown is-hoverable">
                     <span className="navbar-item"><a class="button is-danger">Link Builder</a></span>
                     <span className="navbar-item"><a class="button is-danger">Message Builder</a></span>
-                    <span className="navbar-item"><a class="button is-danger">Link Tracker <span class="fa fa-key"></span></a></span>
+                    <span className="navbar-item"><a class="button is-danger">Link Tracker&nbsp;<FontAwesomeIcon icon={['fa', 'unlock']} /><span class="fa fa-key"></span></a></span>
                 </div>
                 <div className="navbar-end">
                     <span className="navbar-item">

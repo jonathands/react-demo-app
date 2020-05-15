@@ -4,9 +4,9 @@ import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
 import { library } from '@fortawesome/fontawesome-svg-core'; 
-import { faCode, faPhone , faLink } from '@fortawesome/free-solid-svg-icons'
+import { faCode, faPhone , faLink , faUnlock} from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons';
-library.add(fab, faCode, faLink, faPhone);
+library.add(fab, faCode, faLink, faPhone, faUnlock);
 
 ReactDOM.render(
   <React.StrictMode>
