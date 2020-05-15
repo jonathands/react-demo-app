@@ -1,6 +1,6 @@
 import React from 'react';
 
-class InformationBox extends React.Component {
+class ChatBox extends React.Component {
     constructor(props)
     {
         super(props);
@@ -9,8 +9,10 @@ class InformationBox extends React.Component {
     }
 
     render() {
-        return <div column="is-danger"> aaaaa </div>;
+        return <div className="notification is-warning">
+            Hello , it's me , I was trying to write react.
+        </div>
     }
 }
 
-export default InformationBox;
+export default ChatBox;
